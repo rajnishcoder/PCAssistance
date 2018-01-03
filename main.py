@@ -19,4 +19,13 @@ except sr.UnknownValueError:
 except sr.RequestError as e:
     print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
-print(output)
+# if output is not undefined
+try:
+    output
+except NameError:
+    print ("Oops there is an error in audio output :(")
+else:
+    print(output)
+  
+
+
