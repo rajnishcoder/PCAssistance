@@ -1,4 +1,7 @@
 import speech_recognition as sr
+
+#custom classes
+from AudioTracker import AudioTracker
  
 # To Record Audio
 
@@ -6,7 +9,7 @@ r = sr.Recognizer()
 audio = None
 def listen():
     with sr.Microphone() as source:
-        print("Say something!")
+        print("What Can I do for you?")
         global audio
         audio = r.listen(source)
  
@@ -24,8 +27,10 @@ try:
     output
 except NameError:
     print ("Oops there is an error in audio output :(")
-else:
-    print(output)
+else:    
+    # send it to Audio Tracker
+    AudioTracker(output)
+    # print(output)
   
 
 
