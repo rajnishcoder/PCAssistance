@@ -12,8 +12,10 @@ def listen():
         print("What Can I do for you?")
         global audio
         audio = r.listen(source)
- 
+
+# calling listning function
 listen()
+
 try:
     output = r.recognize_google(audio)
 except sr.UnknownValueError:
@@ -30,7 +32,7 @@ except NameError:
 else:    
     # send it to Audio Tracker
     AudioTracker(output)
-    # print(output)
+    print(output)
   
 
 
