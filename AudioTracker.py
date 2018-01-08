@@ -6,12 +6,15 @@ class AudioTracker(object):
         # creating a search list for detection
         searchVal = ["search", "what is"]
         # checking if search command exist in input audio
-        if any(x in audioText for x in searchVal):
-            print(searchVal);
-            #calling google search function
-            self.googleSearch(audioText)
-        else:
-            print("Search is not in audio")
+        for sItem in searchVal:
+            if sItem in audioText:
+            # if any(x in audioText for x in searchVal):
+                print("in")
+                #calling google search function
+                self.googleSearch(audioText)
+                break
+            else:
+                print("Search is not in audio")
         
 
     def googleSearch(self, audioText):
@@ -20,7 +23,7 @@ class AudioTracker(object):
             searchIndex = audioText.index("search")
             print(searchIndex)
         except ValueError:
-            print("yes")
+            print("search not found")
         pass
 
 
