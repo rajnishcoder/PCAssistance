@@ -7,7 +7,6 @@ class AudioTracker(object):
         searchVal = ["search", "what is"]
         # checking if search command exist in input audio
         if any(x in audioText for x in searchVal):
-            # print(x)
             print(searchVal);
             #calling google search function
             self.googleSearch(audioText)
