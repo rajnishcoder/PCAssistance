@@ -22,14 +22,14 @@ class AudioTracker(object):
                 print("Search is not in audio")
         
 
+    # to detect where is search in audio
     def googleSearchIndex(self, audioText, sItem):
-        # to detect where is search in audio
         try:
             searchIndex = audioText.index(sItem)
             if searchIndex > 0:
                 self.googleSearch(audioText)
             else:
-                searchText = audioText.replace("search", "")
+                searchText = audioText.replace(sItem, "")
                 GoogleSearchClass(searchText)
         except ValueError:
             print("search not found")
