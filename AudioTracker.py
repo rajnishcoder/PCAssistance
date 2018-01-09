@@ -1,4 +1,5 @@
 from GoogleSearch import GoogleSearchClass
+import ast
 
 class AudioTracker(object):
     def __init__(self, audioText):
@@ -28,10 +29,8 @@ class AudioTracker(object):
             if searchIndex > 0:
                 self.googleSearch(audioText)
             else:
-                audioText.remove("search")
-                print(audioText)
-                GoogleSearchClass(audioText)
-                print(searchIndex)
+                searchText = audioText.replace("search", "")
+                GoogleSearchClass(searchText)
         except ValueError:
             print("search not found")
         pass
