@@ -4,7 +4,6 @@ import speech_recognition as sr
 from AudioTracker import AudioTracker
  
 # To Record Audio
-
 r = sr.Recognizer()
 audio = None
 def listen():
@@ -28,7 +27,7 @@ except sr.RequestError as e:
 try:
     output
 except NameError:
-    print ("Oops there is an error in audio output :(")
+    print ("Oops! there is an error in audio output :(")
 else:    
     # send it to Audio Tracker
     AudioTracker(output)
