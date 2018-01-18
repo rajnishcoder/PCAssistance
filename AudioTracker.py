@@ -10,12 +10,12 @@ class AudioTracker(object):
 
     def googleSearch(self, audioText):
         # creating a search list for detection
-        searchVal = ["search", "what is", "tell me about"]
+        searchKeywords = ["search", "what is", "tell me about"]
         # checking if search command exist in input audio
-        for sItem in searchVal:
+        for sItem in searchKeywords:
             # filter search keyword in audio
             if sItem in audioText:
-            # if any(x in audioText for x in searchVal):
+            # if any(x in audioText for x in searchKeywords):
                 # calling google search function
                 self.googleSearchIndex(audioText, sItem)
                 break
