@@ -15,7 +15,6 @@ class AudioTracker(object):
         for sItem in searchKeywords:
             # filter search keyword in audio
             if sItem in audioText:
-            # if any(x in audioText for x in searchKeywords):
                 # calling google search function
                 self.googleSearchIndex(audioText, sItem)
                 break
