@@ -3,7 +3,6 @@ import ast
 
 class AudioTracker(object):
     def __init__(self, audioText):
-        # self.audio = audio
         ### if it is a search
         self.googleSearch(audioText)
         
