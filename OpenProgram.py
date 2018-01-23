@@ -1,8 +1,8 @@
 import os
 
-class OpenPregram(object):
+class OpenPregramClass(object):
     def __init__(self, fileName):
         try:
-            os.startfile(fileName)
-        except Exception, e:
-            print str(e)
+            os.system(fileName+'.exe')
+        except Exception as e:
+            print(e)

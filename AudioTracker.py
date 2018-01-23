@@ -1,5 +1,5 @@
 from GoogleSearch import GoogleSearchClass
-from OpenProgram import OpenProgram 
+from OpenProgram import OpenPregramClass 
 # import ast
 
 class AudioTracker(object):
@@ -15,11 +15,13 @@ class AudioTracker(object):
         for sItem in searchKeywords:
             if audioText.index("open") == 0:
                 self.callOpenProgram(audioText)
-            # filter search keyword in audio
-            if sItem in audioText:
-                # calling google search function
-                self.googleSearchIndex(audioText, sItem)
                 break
+            else:
+            # filter search keyword in audio
+                if sItem in audioText:
+                    # calling google search function
+                    self.googleSearchIndex(audioText, sItem)
+                    break
         
 
     # to detect where is search in audio
@@ -38,7 +40,8 @@ class AudioTracker(object):
     # for opening programs Class
     def callOpenProgram(self, audioText):
         filteredText = audioText.replace("open", "")
-        OpenProgram(filteredText)
+        OpenPregramClass(filteredText)
+        pass
 
         
 
