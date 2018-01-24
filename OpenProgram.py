@@ -6,3 +6,6 @@ class OpenPregramClass(object):
             os.system(fileName+'.exe')
         except Exception as e:
             print(e)
+        pass
+    
+    # for other programs
