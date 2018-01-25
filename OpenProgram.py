@@ -9,3 +9,7 @@ class OpenPregramClass(object):
         pass
     
     # for other programs
+    def openCustomPrograms(args):
+        
+        pass
+        
