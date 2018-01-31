@@ -16,25 +16,35 @@
 # ind=int(input('Enter index of prog :: '))
 # os.system(exe_list[ind])
 
-import os
-
-exe_list=[]
-
-for root, dirs, files in os.walk("."):
-#  print(dirs)
- for j in dirs:
-  for i in files:
-   if i.endswith('.exe'):
-     #p=os.getcwd()+'/'+j+'/'+i
-     p=root+'/'+j+'/'+i
-    #  print(p)
-     exe_list.append(p)
 
 
-for i in exe_list :
-  print('index : {} file :{}'.format(exe_list.index(i),i.split('/')[-1]))
+# import os
 
-ip=int(input('Enter index of file :'))
+# exe_list=[]
 
-print('executing {}...'.format(exe_list[ip]))
-os.system(exe_list[ip])
+# for root, dirs, files in os.walk("."):
+# #  print(dirs)
+#  for j in dirs:
+#   for i in files:
+#    if i.endswith('.exe'):
+#      #p=os.getcwd()+'/'+j+'/'+i
+#      p=root+'/'+j+'/'+i
+#     #  print(p)
+#      exe_list.append(p)
+
+
+# for i in exe_list :
+#   print('index : {} file :{}'.format(exe_list.index(i),i.split('/')[-1]))
+
+# ip=int(input('Enter index of file :'))
+
+# print('executing {}...'.format(exe_list[ip]))
+# os.system(exe_list[ip])
+
+##### to open browser better
+import subprocess
+subprocess.call([r'C:\Program Files\Mozilla Firefox\Firefox.exe',
+    '-new-tab', 'http://www.google.com/'])
+
+
+
