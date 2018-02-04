@@ -12,16 +12,17 @@ class AudioTracker(object):
         # creating a search list for detection
         searchKeywords = ["search", "what is", "tell me about"]
         # checking if search command exist in input audio
-        for sItem in searchKeywords:
-            if audioText.index("open") == 0:
-                self.callOpenProgram(audioText)
-                break
-            else:
+        if audioText.index("open") == 0:
+            self.callOpenProgram(audioText)
+            pass
+        else:
             # filter search keyword in audio
+            for sItem in searchKeywords:
                 if sItem in audioText:
                     # calling google search function
                     self.googleSearchIndex(audioText, sItem)
                     break
+        pass
         
 
     # to detect where is search in audio

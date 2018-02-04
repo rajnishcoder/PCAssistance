@@ -1,17 +1,8 @@
 import MySQLdb
 
-# Open database connection
-db = MySQLdb.connect("localhost","testuser","","root" )
+db = MySQLdb.connect(host="localhost", user="root", passwd="")
 
-# prepare a cursor object using cursor() method
-cursor = db.cursor()
+c = db.cursor()
+c.execute('create database if not exists pythontest')
 
-# execute SQL query using execute() method.
-cursor.execute("SELECT VERSION()")
-
-# Fetch a single row using fetchone() method.
-data = cursor.fetchone()
-print ("Database version : %s " % data)
-
-# disconnect from server
 db.close()
