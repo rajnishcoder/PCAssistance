@@ -12,9 +12,9 @@ class AudioTracker(object):
         # creating a search list for detection
         searchKeywords = ["search", "what is", "tell me about"]
         # checking if search command exist in input audio
-        if audioText.index("open") == 0:
-            self.callOpenProgram(audioText)
-            pass
+        if 'open' in audioText:
+                self.callOpenProgram(audioText)
+                pass
         else:
             # filter search keyword in audio
             for sItem in searchKeywords:
