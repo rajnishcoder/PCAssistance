@@ -11,3 +11,5 @@ Download it from [here](http://landinghub.visualstudio.com/visual-cpp-build-tool
 Then 
 `pip install mysqlclient`
 
+stucked in database
+
