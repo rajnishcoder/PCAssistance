@@ -1,4 +1,4 @@
-from GoogleSearch import GoogleSearchClass
+from search.GoogleSearch import GoogleSearchClass
 from OpenProgram import OpenPregramClass 
 # import ast
 
