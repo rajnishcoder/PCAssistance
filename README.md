@@ -8,4 +8,4 @@ Don't judge my code this is just a beginning :D
 2. Open default programs. (for example:- `open calculator`)
 
 ###### Improving commands of opening programs manually (actually stucked in that)
-Creating database of opening programs. (I stucked, in windows)
+Creating database of opening programs. (I stucked)
