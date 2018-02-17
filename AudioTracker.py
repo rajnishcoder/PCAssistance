@@ -1,5 +1,5 @@
 from search.GoogleSearch import GoogleSearchClass
-from OpenProgram import OpenPregramClass 
+from OpenProgram import OpenProgramClass 
 # import ast
 
 class AudioTracker(object):
@@ -41,7 +41,7 @@ class AudioTracker(object):
     # for opening programs Class
     def callOpenProgram(self, audioText):
         filteredText = audioText.replace("open", "")
-        OpenPregramClass(filteredText)
+        OpenProgramClass(filteredText)
         pass
 
     

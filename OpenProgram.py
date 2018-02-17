@@ -1,7 +1,7 @@
 import os
 
 
-class OpenPregramClass(object):
+class OpenProgramClass(object):
     def __init__(self, fileName):
         print('here')
         # changing commands for specific programs
