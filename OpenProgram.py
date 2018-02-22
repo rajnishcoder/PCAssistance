@@ -6,17 +6,18 @@ class OpenProgramClass(object):
         print('here')
         # changing commands for specific programs
         progName = fileName.lower()
+        # if calculator so change the exe name
         if 'calculator' in progName:
             progName = 'calc'
 
-            # opening programs
-            try:
-                os.system(progName+'.exe')
-            except Exception as e:
-                print(e)
-            pass
         elif 'cmd' in progName:
             subprocess.call('start', shell=True)
+        # opening programs
+        try:
+            os.system(progName+'.exe')
+        except Exception as e:
+            print(e)
+        pass
     
     # for other programs
     def openCustomPrograms(args):
