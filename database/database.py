@@ -1,13 +1,15 @@
 import sqlite3
 
 class ClassName(object):
-    def __init__(self, databaseName):
+    def __init__(self, databaseName, tableName):
     conn = sqlite3.connect(databaseName)
     c = conn.cursor()
+    # calling create table method
+    createTable()
 
     #creating database 
-    def createTable():
-        c.execute('CREATE TABLE IF NOT EXISTS')
+    def createTable(tableName):
+        c.execute('CREATE TABLE IF NOT EXISTS' + tableName + '()')
         
         
         
