@@ -7,7 +7,7 @@ class ClassName(object):
     # calling create table method
     createTable()
 
-    #creating database 
+    # creating dynamic database 
     def createTable(tableName):
         c.execute('CREATE TABLE IF NOT EXISTS' + tableName + '()')
         
