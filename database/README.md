@@ -13,3 +13,7 @@ Then
 
 stucked in database
 
+
+// trying new pymysql
+
+`pip3 install pymysql`

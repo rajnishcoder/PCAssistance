@@ -4,6 +4,7 @@ class ClassName(object):
     def __init__(self, databaseName, tableName):
     conn = sqlite3.connect(databaseName)
     c = conn.cursor()
+    
     # calling create table method
     createTable()
 
