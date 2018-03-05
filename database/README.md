@@ -1,6 +1,6 @@
 ## To Install MySQLdb
 
-`pip install MySQL-python` or `pip3 install MySQL-python`
+<del>`pip install MySQL-python` or `pip3 install MySQL-python`</del>
 
 If you are using windows and got this error
 
