@@ -32,7 +32,7 @@ class MySqlDB(object):
         pass
 
     # creating dynamic database 
-    def createTable(tableName):
+    def createTable(self, tableName):
         c.execute('CREATE TABLE IF NOT EXISTS' + tableName + '(count REAL, key TEXT, value TEXT)')
     
     # fetch all data
@@ -43,7 +43,7 @@ class MySqlDB(object):
         pass
 
     # insert Data
-    def insertData(tableName, count, key, value):
+    def insertData(self, tableName, count, key, value):
         c.execute('INSERT INTO' + tableName + 'VALUES('+ count +', '+ key +' '+ value +')')
         pass 
 
