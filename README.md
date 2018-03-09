@@ -10,4 +10,4 @@ Don't judge my code this is just a beginning :D
 
 ###### Improving commands of opening programs manually (actually stucked in that)
 
-Changing SQLite to MySQL with improved code
+Changing SQLite to MySQL with improved and automated code
