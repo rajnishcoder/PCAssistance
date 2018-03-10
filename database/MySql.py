@@ -1,6 +1,8 @@
 import pymysql
 
 class MySqlDB(object):
+    cursor
+    sql
 
     def __init__(self, command, tableName, count, key, value):
         self.command = command
@@ -13,7 +15,7 @@ class MySqlDB(object):
         self.createConn(self)
 
         if (command == 'insert'):
-            self.insertData(tableName, count, key, value)
+            self.insertData(self.tableName, self.count, self.key, self.value)
             pass
         elif (command == 'get'):
             self.fetchAll()
@@ -24,27 +26,25 @@ class MySqlDB(object):
     
     # db is fixed for now
     def createConn(self):
-        global c
-        global sql
         conn = pymysql.connect(host='localhost', user='root', password='', db='pythontest')
-        c = conn.cursor()
-        sql = ('select * from' + self.tableName)
+        MySqlDB.cursor = conn.cursor()
+        MySqlDB.sql = ('select * from' + self.tableName)
         pass
 
     # creating dynamic database 
     def createTable(self, tableName):
-        c.execute('CREATE TABLE IF NOT EXISTS' + tableName + '(count REAL, key TEXT, value TEXT)')
+        MySqlDB.cursor.execute('CREATE TABLE IF NOT EXISTS' + tableName + '(count REAL, key TEXT, value TEXT)')
     
     # fetch all data
     @staticmethod
     def fetchAll():
-        c.execute(sql)
-        return c.fetchall()
+        MySqlDB.cursor.execute(MySqlDB.sql)
+        return MySqlDB.cursor.fetchall()
         pass
 
     # insert Data
     def insertData(self, tableName, count, key, value):
-        c.execute('INSERT INTO' + tableName + 'VALUES('+ count +', '+ key +' '+ value +')')
+        MySqlDB.cursor.execute('INSERT INTO' + tableName + 'VALUES('+ count +', '+ key +' '+ value +')')
         pass 
 
 
