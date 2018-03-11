@@ -11,8 +11,8 @@ class MySqlDB(object):
         self.key = key
         self.value = value
 
+        self.createConn()
         self.createTable(tableName)
-        self.createConn(self)
 
         if (command == 'insert'):
             self.insertData(self.tableName, self.count, self.key, self.value)
