@@ -1,8 +1,6 @@
 import pymysql
 
 class MySqlDB(object):
-    cursor
-    sql
 
     def __init__(self, command, tableName, count, key, value):
         self.command = command
@@ -11,42 +9,46 @@ class MySqlDB(object):
         self.key = key
         self.value = value
 
-        self.createConn()
+        self.conn = pymysql.connect(host='localhost', user='root', password='', db='pythontest')
+        self.cursor = self.conn.cursor()
+        self.sql = ('select * from' + self.tableName)
+
+        # self.createConn()
         self.createTable(tableName)
 
         if (command == 'insert'):
             self.insertData(self.tableName, self.count, self.key, self.value)
             pass
         elif (command == 'get'):
-            self.fetchAll()
+            self.fetchAll(self)
             pass
         else:
             pass
 
     
     # db is fixed for now
-    def createConn(self):
-        conn = pymysql.connect(host='localhost', user='root', password='', db='pythontest')
-        MySqlDB.cursor = conn.cursor()
-        MySqlDB.sql = ('select * from' + self.tableName)
-        pass
+    # def createConn(self):
+    #     conn = pymysql.connect(host='localhost', user='root', password='', db='pythontest')
+    #     MySqlDB.cursor = conn.cursor()
+    #     MySqlDB.sql = ('select * from' + self.tableName)
+    #     pass
 
     # creating dynamic database 
     def createTable(self, tableName):
-        MySqlDB.cursor.execute('CREATE TABLE IF NOT EXISTS' + tableName + '(count REAL, key TEXT, value TEXT)')
+        self.cursor.execute('CREATE TABLE IF NOT EXISTS TesttableName(count INT, progName TEXT, progPath TEXT)')
     
     # fetch all data
     @staticmethod
-    def fetchAll():
-        MySqlDB.cursor.execute(MySqlDB.sql)
-        return MySqlDB.cursor.fetchall()
+    def fetchAll(self):
+        self.cursor.execute(self.sql)
+        return self.cursor.fetchall()
         pass
 
     # insert Data
     def insertData(self, tableName, count, key, value):
-        MySqlDB.cursor.execute('INSERT INTO' + tableName + 'VALUES('+ count +', '+ key +' '+ value +')')
+        self.cursor.execute('INSERT INTO' + tableName + 'VALUES('+ count +', '+ key +' '+ value +')')
         pass 
 
+testCount = 1
 
-# MySqlDB()
-
+MySqlDB('insert', 'TesttableName', testCount, 'testKey', 'testvalue')
