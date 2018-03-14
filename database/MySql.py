@@ -1,6 +1,7 @@
 import pymysql
 
 class MySqlDB(object):
+    print('working')
 
     def __init__(self, command, tableName, count, key, value):
         self.command = command
@@ -12,11 +13,13 @@ class MySqlDB(object):
         self.conn = pymysql.connect(host='localhost', user='root', password='', db='pythontest')
         self.cursor = self.conn.cursor()
         self.sql = ('select * from' + self.tableName)
+        print('working2')
 
         # self.createConn()
-        self.createTable(tableName)
+        # self.createTable(tableName)
 
         if (command == 'insert'):
+            print('working3')
             self.insertData(self.tableName, self.count, self.key, self.value)
             pass
         elif (command == 'get'):
@@ -46,9 +49,10 @@ class MySqlDB(object):
 
     # insert Data
     def insertData(self, tableName, count, key, value):
+        print('working4')
         self.cursor.execute('INSERT INTO' + tableName + 'VALUES('+ count +', '+ key +' '+ value +')')
         pass 
 
-testCount = 1
+testCount = 2
 
 MySqlDB('insert', 'TesttableName', testCount, 'testKey', 'testvalue')
