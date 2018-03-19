@@ -53,6 +53,6 @@ class MySqlDB(object):
         self.cursor.execute('INSERT INTO' + tableName + 'VALUES('+ count +', '+ key +' '+ value +')')
         pass 
 
-testCount = 2
+testCount = 3
 
 MySqlDB('insert', 'TesttableName', testCount, 'testKey', 'testvalue')
