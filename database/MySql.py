@@ -37,8 +37,8 @@ class MySqlDB(object):
     #     pass
 
     # creating dynamic database 
-    def createTable(self, tableName):
-        self.cursor.execute('CREATE TABLE IF NOT EXISTS TesttableName(count INT, progName TEXT, progPath TEXT)')
+    # def createTable(self, tableName):
+    #     self.cursor.execute('CREATE TABLE IF NOT EXISTS TesttableName(count INT, progName TEXT, progPath TEXT)')
     
     # fetch all data
     @staticmethod
