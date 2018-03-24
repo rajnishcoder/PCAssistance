@@ -2,20 +2,20 @@ import sqlite3
 
 class ClassName(object):
     def __init__(self, databaseName, tableName):
-    conn = sqlite3.connect(databaseName)
-    c = conn.cursor()
+        conn = sqlite3.connect(databaseName)
+        self.c = conn.cursor()
     
-    # calling create table method
-    createTable()
+        # calling create table method
+        self.createTable(tableName)
 
     # creating dynamic database 
-    def createTable(tableName):
-        c.execute('CREATE TABLE IF NOT EXISTS' + tableName + '()')
+    def createTable(self, tableName):
+        self.c.execute('CREATE TABLE IF NOT EXISTS' + tableName + '()')
         
         
         
 
 
-c.execute('create database if not exists')
+    self.c.execute('create database if not exists')
 
-db.close()
+    db.close()

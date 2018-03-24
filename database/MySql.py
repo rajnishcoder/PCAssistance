@@ -20,11 +20,9 @@ class MySqlDB(object):
 
         if (command == 'insert'):
             print('working3')
-            self.insertData(self.tableName, self.count, self.key, self.value)
-            pass
+            self.insertData()
         elif (command == 'get'):
             self.fetchAll(self)
-            pass
         else:
             pass
 
@@ -45,14 +43,15 @@ class MySqlDB(object):
     def fetchAll(self):
         self.cursor.execute(self.sql)
         return self.cursor.fetchall()
-        pass
 
     # insert Data
-    def insertData(self, tableName, count, key, value):
+    def insertData(self):
         print('working4')
-        self.cursor.execute('INSERT INTO' + tableName + 'VALUES('+ count +', '+ key +' '+ value +')')
-        pass 
+        self.cursor.execute('INSERT INTO' + self.tableName + 'VALUES('+ self.count +', '+ self.key +' '+ self.value +')')
+        print('workingasdasd')
+        
 
-testCount = 3
-
-MySqlDB('insert', 'TesttableName', testCount, 'testKey', 'testvalue')
+testCount = 4
+print('working5')
+MySqlDB('insert', 'TesttableName', '6', 'testKey', 'testvalue')
+print('working6')
