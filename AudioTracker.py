@@ -9,12 +9,13 @@ class AudioTracker(object):
         
 
     def googleSearch(self, audioText):
+        print(audioText)
         # creating a search list for detection
         searchKeywords = ["search", "what is", "tell me about"]
         # checking if search command exist in input audio
         if ('open' in audioText) and (audioText.index('open')==0):
-                self.callOpenProgram(audioText)
-                pass
+            self.callOpenProgram(audioText)
+            pass
         else:
             # filter search keyword in audio
             for sItem in searchKeywords:
@@ -41,7 +42,7 @@ class AudioTracker(object):
     # for opening programs Class
     def callOpenProgram(self, audioText):
         filteredText = audioText.replace("open", "")
-        OpenProgramClass(filteredText)
+        OpenProgramClass(filteredText)      
         pass
 
     
