@@ -13,3 +13,5 @@ Don't judge my code this is just a beginning :D
 **<10-03-2018>** Changing SQLite to MySQL with improved and automated code
 
 **<28-03-2018>** Working on opening program. 
+
+**On Long break.................**
